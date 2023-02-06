@@ -1,11 +1,183 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" fx:controller="DyslexiaFXMLController">
-    
+<AnchorPane id="AnchorPane" fx:id="gamePane" prefHeight="794.0" prefWidth="1104.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="DyslexiaFXMLController">
+   <children>
+      <ImageView fitHeight="770.0" fitWidth="1104.0" layoutY="24.0">
+         <image>
+            <Image url="C:\Users\moham\Documents\NetBeansProjectsb\dyslexiaGame\src\img\BG.png" />
+         </image>
+      </ImageView>
+      <MenuBar layoutY="-1.0" prefHeight="27.0" prefWidth="1104.0" style="-fx-background-color: skyblue;">
+        <menus>
+          <Menu mnemonicParsing="false" text="File">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Close" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Edit">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Delete" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Help">
+            <items>
+              <MenuItem mnemonicParsing="false" text="About" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+      <ImageView fx:id="image1" fitHeight="328.0" fitWidth="314.0" layoutX="126.0" layoutY="245.0" pickOnBounds="true">
+         <image>
+            <Image url="C:\Users\moham\Documents\NetBeansProjectsb\dyslexiaGame\src\img\whiteBG.jpg" />
+         </image>
+      </ImageView>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" height="144.0" layoutX="120.0" layoutY="53.0" stroke="#fffffffc" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeWidth="0.0" style="-fx-arc-height: 50; -fx-arc-width: 50;" width="865.0">
+         <fill>
+            <LinearGradient endX="1.0" endY="1.0" startX="1.0" startY="0.5023696682464455">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="1.0" green="0.8399691581726074" blue="0.43518519401550293" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="1.0" green="0.6913580298423767" blue="0.07407407462596893" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </fill>
+      </Rectangle>
+      <Button fx:id="sound" layoutX="178.0" layoutY="96.0" mnemonicParsing="false" onAction="#soundClicked" prefHeight="36.0" prefWidth="62.0" style="-fx-border-width: 3;" stylesheets="@css/button.css" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="27.0" />
+         </font>
+         <graphic>
+            <ImageView fitHeight="33.0" fitWidth="29.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="C:\Users\moham\Documents\NetBeansProjectsb\dyslexiaGame\src\img\sound.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <Text fill="WHITE" layoutX="319.0" layoutY="137.0" stroke="#000000fc" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeType="OUTSIDE" strokeWidth="2.0" text="Points: " wrappingWidth="148.13671875">
+         <font>
+            <Font name="System Bold" size="27.0" />
+         </font>
+      </Text>
+      <Text fill="WHITE" layoutX="540.0" layoutY="139.0" stroke="#000000fc" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeType="OUTSIDE" strokeWidth="2.0" text="Misses: " wrappingWidth="148.13671875">
+         <font>
+            <Font name="System Bold" size="27.0" />
+         </font>
+      </Text>
+      <Text fx:id="points" fill="WHITE" layoutX="415.0" layoutY="138.0" stroke="#000000fc" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeType="OUTSIDE" strokeWidth="2.0" text="0" wrappingWidth="41.13671875">
+         <font>
+            <Font name="System Bold" size="27.0" />
+         </font>
+      </Text>
+      <Text fx:id="misses" fill="WHITE" layoutX="626.0" layoutY="138.0" stroke="#000000fc" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeType="OUTSIDE" strokeWidth="2.0" text="0" textAlignment="CENTER" wrappingWidth="41.13671875">
+         <font>
+            <Font name="System Bold" size="27.0" />
+         </font>
+      </Text>
+      <Button fx:id="exitGame" contentDisplay="CENTER" layoutX="728.0" layoutY="97.0" mnemonicParsing="false" onAction="#exitClicked" prefHeight="57.0" prefWidth="175.0" style="-fx-border-width: 3;" stylesheets="@css/button.css" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="27.0" />
+         </font>
+         <graphic>
+            <Text fill="WHITE" stroke="#000000fc" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeType="OUTSIDE" strokeWidth="2.0" text="Exit Game" textAlignment="CENTER" wrappingWidth="148.13671875">
+               <font>
+                  <Font name="System Bold" size="27.0" />
+               </font>
+            </Text>
+         </graphic>
+      </Button>
+      <Button fx:id="buttonimg1" layoutX="196.0" layoutY="621.0" mnemonicParsing="false" onAction="#buttonimg1Clicked" prefHeight="57.0" prefWidth="175.0" style="-fx-border-width: 5;" stylesheets="@css/button.css" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="27.0" />
+         </font>
+         <graphic>
+            <Text fx:id="imgOneName" fill="WHITE" stroke="#000000fc" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeType="OUTSIDE" strokeWidth="2.0" text="Lake" textAlignment="CENTER" wrappingWidth="69.13671875">
+               <font>
+                  <Font name="System Bold" size="27.0" />
+               </font>
+            </Text>
+         </graphic>
+      </Button>
+      <Button fx:id="buttonimg2" alignment="CENTER" contentDisplay="CENTER" layoutX="736.0" layoutY="621.0" mnemonicParsing="false" onAction="#buttonimg2Clicked" prefHeight="57.0" prefWidth="175.0" style="-fx-border-width: 5;" stylesheets="@css/button.css" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="27.0" />
+         </font>
+         <graphic>
+            <Text fx:id="imgTwoName" fill="WHITE" stroke="#000000fc" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeType="OUTSIDE" strokeWidth="2.0" text="Cake" textAlignment="CENTER" wrappingWidth="90.13671875">
+               <font>
+                  <Font name="System Bold" size="27.0" />
+               </font>
+            </Text>
+         </graphic>
+      </Button>
+      <ImageView fx:id="image2" fitHeight="328.0" fitWidth="314.0" layoutX="665.0" layoutY="245.0" pickOnBounds="true">
+         <image>
+            <Image url="C:\Users\moham\Documents\NetBeansProjectsb\dyslexiaGame\src\img\whiteBG.jpg" />
+         </image>
+      </ImageView>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffffff00" height="328.0" layoutX="126.0" layoutY="245.0" stroke="WHITE" strokeType="INSIDE" strokeWidth="5.0" width="314.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffffff00" height="328.0" layoutX="666.0" layoutY="245.0" stroke="WHITE" strokeType="INSIDE" strokeWidth="5.0" width="314.0" />
+      <Text fx:id="result" fill="#ff3838" layoutX="433.0" layoutY="673.0" stroke="WHITE" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeType="OUTSIDE" strokeWidth="3.4" text="Try Again!!!" textAlignment="CENTER" wrappingWidth="242.13671875">
+         <font>
+            <Font name="System Bold" size="44.0" />
+         </font>
+      </Text>
+      <Button fx:id="easyButton" contentDisplay="CENTER" layoutX="478.0" layoutY="287.0" mnemonicParsing="false" onAction="#easyClicked" prefHeight="63.0" prefWidth="148.0" style="-fx-border-width: 3; -fx-background-color: gold;" stylesheets="@css/button.css" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="27.0" />
+         </font>
+         <graphic>
+            <Text fill="WHITE" stroke="#000000fc" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeType="OUTSIDE" strokeWidth="2.0" text="Easy" textAlignment="CENTER" wrappingWidth="60.13671875">
+               <font>
+                  <Font name="System Bold" size="27.0" />
+               </font>
+            </Text>
+         </graphic>
+      </Button>
+      <Button fx:id="mediumButton" contentDisplay="CENTER" layoutX="479.0" layoutY="359.0" mnemonicParsing="false" onAction="#mediumClicked" prefHeight="63.0" prefWidth="148.0" style="-fx-border-width: 3; -fx-background-color: gold;" stylesheets="@css/button.css" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="27.0" />
+         </font>
+         <graphic>
+            <Text fill="WHITE" stroke="#000000fc" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeType="OUTSIDE" strokeWidth="2.0" text="Medium" textAlignment="CENTER" wrappingWidth="106.13671875">
+               <font>
+                  <Font name="System Bold" size="27.0" />
+               </font>
+            </Text>
+         </graphic>
+      </Button>
+      <Button fx:id="hardButton" contentDisplay="CENTER" layoutX="480.0" layoutY="431.0" mnemonicParsing="false" onAction="#exitClicked" prefHeight="63.0" prefWidth="148.0" style="-fx-border-width: 3; -fx-background-color: gold;" stylesheets="@css/button.css" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="27.0" />
+         </font>
+         <graphic>
+            <Text fill="WHITE" stroke="#000000fc" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeType="OUTSIDE" strokeWidth="2.0" text="Hard" textAlignment="CENTER" wrappingWidth="91.13671875">
+               <font>
+                  <Font name="System Bold" size="27.0" />
+               </font>
+            </Text>
+         </graphic>
+      </Button>
+   </children>
 </AnchorPane>
