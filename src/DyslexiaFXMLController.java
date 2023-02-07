@@ -227,7 +227,7 @@ public class DyslexiaFXMLController implements Initializable {
 
     @FXML
     private void easyClicked(ActionEvent event) {
-        currentRate = 0.67;
+        currentRate = 0.75;
         chosenWordMP3.setRate(currentRate);
         easyButton.setStyle("-fx-background-color: orange;");
         easyButton.setStyle("-fx-border-color: black;");
@@ -237,7 +237,7 @@ public class DyslexiaFXMLController implements Initializable {
 
     @FXML
     private void mediumClicked(ActionEvent event) {
-        currentRate = 0.75;
+        currentRate = 0.8;
         chosenWordMP3.setRate(currentRate);
         easyButton.setStyle("-fx-background-color: gold;");
         mediumButton.setStyle("-fx-background-color: orange;");
