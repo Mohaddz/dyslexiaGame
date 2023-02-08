@@ -31,48 +31,48 @@ public class DyslexiaFXMLController implements Initializable {
     int randomImage = 0;
     double currentRate = 1;
     rhymeWords chosenWord;
-    private Media correctAudio = new Media(new File("C:/Users/moham/Documents/NetBeansProjectsb/dyslexiaGame/src/audio/correct.mp3").toURI().toString());
-    private Media wrongAudio = new Media(new File("C:/Users/moham/Documents/NetBeansProjectsb/dyslexiaGame/src/audio/wrong.mp3").toURI().toString());
-    private Media bgMusic = new Media(new File("C:/Users/moham/Documents/NetBeansProjectsb/dyslexiaGame/src/audio/backgroundMusic.mp3").toURI().toString());
+    private Media correctAudio = new Media(new File("src\\audio\\correct.mp3").toURI().toString());
+    private Media wrongAudio = new Media(new File("src\\audio\\wrong.mp3").toURI().toString());
+    private Media bgMusic = new Media(new File("src\\audio\\backgroundMusic.mp3").toURI().toString());
 
     private Image lakeImage = new Image("C:/Users/moham/Documents/NetBeansProjectsb/dyslexiaGame/src/img/Lake.png", 330, 353, true, true);
-    private Media lakeAudio = new Media(new File("C:/Users/moham/Documents/NetBeansProjectsb/dyslexiaGame/src/audio/Lake.mp3").toURI().toString());
+    private Media lakeAudio = new Media(new File("src\\audio\\Lake.mp3").toURI().toString());
     private rhymeWords lake = new rhymeWords("Lake", lakeImage, lakeAudio);
 
     private Image cakeImage = new Image("C:/Users/moham/Documents/NetBeansProjectsb/dyslexiaGame/src/img/cake.png", 330, 353, true, true);
-    private Media cakeAudio = new Media(new File("C:/Users/moham/Documents/NetBeansProjectsb/dyslexiaGame/src/audio/Cake.mp3").toURI().toString());
+    private Media cakeAudio = new Media(new File("src\\audio\\Cake.mp3").toURI().toString());
     private rhymeWords cake = new rhymeWords("Cake", cakeImage, cakeAudio);
 
     private Image bookImage = new Image("C:/Users/moham/Documents/NetBeansProjectsb/dyslexiaGame/src/img/book.png", 330, 353, true, true);
-    private Media bookAudio = new Media(new File("C:/Users/moham/Documents/NetBeansProjectsb/dyslexiaGame/src/audio/book.mp3").toURI().toString());
+    private Media bookAudio = new Media(new File("src\\audio\\book.mp3").toURI().toString());
     private rhymeWords book = new rhymeWords("Book", bookImage, bookAudio);
 
     private Image cookImage = new Image("C:/Users/moham/Documents/NetBeansProjectsb/dyslexiaGame/src/img/cook.png", 330, 353, true, true);
-    private Media cookAudio = new Media(new File("C:/Users/moham/Documents/NetBeansProjectsb/dyslexiaGame/src/audio/cook.mp3").toURI().toString());
+    private Media cookAudio = new Media(new File("src\\audio\\cook.mp3").toURI().toString());
     private rhymeWords cook = new rhymeWords("Cook", cookImage, cookAudio);
     
     private Image barkImage = new Image("C:/Users/moham/Documents/NetBeansProjectsb/dyslexiaGame/src/img/bark.png", 330, 353, true, true);
-    private Media barkAudio = new Media(new File("C:/Users/moham/Documents/NetBeansProjectsb/dyslexiaGame/src/audio/bark.mp3").toURI().toString());
+    private Media barkAudio = new Media(new File("src\\audio\\bark.mp3").toURI().toString());
     private rhymeWords bark = new rhymeWords("Bark", barkImage, barkAudio);
 
     private Image parkImage = new Image("C:/Users/moham/Documents/NetBeansProjectsb/dyslexiaGame/src/img/park.png", 330, 353, true, true);
-    private Media parkAudio = new Media(new File("C:/Users/moham/Documents/NetBeansProjectsb/dyslexiaGame/src/audio/park.mp3").toURI().toString());
+    private Media parkAudio = new Media(new File("src\\audio\\park.mp3").toURI().toString());
     private rhymeWords park = new rhymeWords("Park", parkImage, parkAudio);
     
     private Image lampImage = new Image("C:/Users/moham/Documents/NetBeansProjectsb/dyslexiaGame/src/img/lamp.png", 330, 353, true, true);
-    private Media lampAudio = new Media(new File("C:/Users/moham/Documents/NetBeansProjectsb/dyslexiaGame/src/audio/lamp.mp3").toURI().toString());
+    private Media lampAudio = new Media(new File("src\\audio\\lamp.mp3").toURI().toString());
     private rhymeWords lamp = new rhymeWords("lamp", lampImage, lampAudio);
     
     private Image campImage = new Image("C:/Users/moham/Documents/NetBeansProjectsb/dyslexiaGame/src/img/camp.png", 330, 353, true, true);
-    private Media campAudio = new Media(new File("C:/Users/moham/Documents/NetBeansProjectsb/dyslexiaGame/src/audio/camp.mp3").toURI().toString());
+    private Media campAudio = new Media(new File("src\\audio\\camp.mp3").toURI().toString());
     private rhymeWords camp = new rhymeWords("camp", campImage, campAudio);
     
     private Image batImage = new Image("C:/Users/moham/Documents/NetBeansProjectsb/dyslexiaGame/src/img/bat.png", 330, 353, true, true);
-    private Media batAudio = new Media(new File("C:/Users/moham/Documents/NetBeansProjectsb/dyslexiaGame/src/audio/bat.mp3").toURI().toString());
+    private Media batAudio = new Media(new File("src\\audio\\bat.mp3").toURI().toString());
     private rhymeWords bat = new rhymeWords("Bat", batImage, batAudio);
     
     private Image catImage = new Image("C:/Users/moham/Documents/NetBeansProjectsb/dyslexiaGame/src/img/cat.png", 330, 353, true, true);
-    private Media catAudio = new Media(new File("C:/Users/moham/Documents/NetBeansProjectsb/dyslexiaGame/src/audio/cat.mp3").toURI().toString());
+    private Media catAudio = new Media(new File("src\\audio\\cat.mp3").toURI().toString());
     private rhymeWords cat = new rhymeWords("Cat", catImage, catAudio);
     
     
