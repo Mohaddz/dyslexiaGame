@@ -28,7 +28,7 @@ import javafx.scene.text.Text;
  * @author Mohad
  */
 public class SpillingFXMLController implements Initializable {
-    
+
     int countPoints = 0;
     int countMisses = 0;
     private int level = 0;
@@ -40,8 +40,8 @@ public class SpillingFXMLController implements Initializable {
     private Media wrongAudio = new Media(new File("src\\audio\\wrong.mp3").toURI().toString());
     private Media bgMusic = new Media(new File("src\\audio\\backgroundMusic.mp3").toURI().toString());
 
-    private Image lakeImage = new Image("C:\\Users\\Mohad\\Documents\\NetBeansProjects\\dyslexiaGame\\src\\img\\Lake.png", 330, 353, true, true);
-    private Media lakeAudio = new Media(new File("src\\audio\\Lake.mp3").toURI().toString());
+//    private Image lakeImage = new Image("C:\\Users\\Mohad\\Documents\\NetBeansProjects\\dyslexiaGame\\src\\img\\Lake.png", 330, 353, true, true);
+//    private Media FirstAudio = new Media(new File("src\\audio\\Lake.mp3").toURI().toString());
 //    private rhymeWords lake = new rhymeWords("Lake", lakeImage, lakeAudio);
 //
 //    private Image cakeImage = new Image("src\\img\\cake.png", 330, 353, true, true);
@@ -79,17 +79,12 @@ public class SpillingFXMLController implements Initializable {
 //    private Image catImage = new Image("src\\img\\cat.png", 330, 353, true, true);
 //    private Media catAudio = new Media(new File("src\\audio\\cat.mp3").toURI().toString());
 //    private rhymeWords cat = new rhymeWords("Cat", catImage, catAudio);
-    
-    
-    
-    
-    
-    
-    
+    MediaPlayer chosenWordMP3;
+    MediaPlayer wrongMP3;
     int lvl = 0;
     char[] pool = new char[8];
     StringBuilder answer = new StringBuilder();
-    ArrayList<StringBuilder> Level = new ArrayList<StringBuilder>();
+    ArrayList<rhymeWords> Level = new ArrayList<rhymeWords>();
     @FXML
     private ImageView Image;
     @FXML
@@ -110,8 +105,6 @@ public class SpillingFXMLController implements Initializable {
     private Button btn8;
     @FXML
     private Label Ltr1;
-    @FXML
-    private Button playSound;
     MediaPlayer correctMP3;
     @FXML
     private Text points;
@@ -121,32 +114,41 @@ public class SpillingFXMLController implements Initializable {
     private Button exitGame;
     @FXML
     private Button sound;
+    @FXML
+    private Button easyButton;
+    @FXML
+    private Button mediumButton;
+    @FXML
+    private Button hardButton;
+
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
 
+        Level.add(new rhymeWords("first", new Image("C:\\Users\\Mohad\\Documents\\NetBeansProjects\\dyslexiaGame\\src\\img\\first.png", 330, 353, true, true), new Media(new File("src\\audio\\first.mp3").toURI().toString())));
+        Level.add(new rhymeWords("space", new Image("C:\\Users\\Mohad\\Documents\\NetBeansProjects\\dyslexiaGame\\src\\img\\space.jpg", 330, 353, true, true), new Media(new File("src\\audio\\space.mp3").toURI().toString())));
+        Level.add(new rhymeWords("people", new Image("C:\\Users\\Mohad\\Documents\\NetBeansProjects\\dyslexiaGame\\src\\img\\people.png", 330, 353, true, true), new Media(new File("src\\audio\\people.mp3").toURI().toString())));
+        Level.add(new rhymeWords("date", new Image("C:\\Users\\Mohad\\Documents\\NetBeansProjects\\dyslexiaGame\\src\\img\\date.png", 330, 353, true, true), new Media(new File("src\\audio\\date.mp3").toURI().toString())));
+        Level.add(new rhymeWords("fact", new Image("C:\\Users\\Mohad\\Documents\\NetBeansProjects\\dyslexiaGame\\src\\img\\fact.png", 330, 353, true, true), new Media(new File("src\\audio\\fact.mp3").toURI().toString())));
         
-        
-        Level.add(new StringBuilder("first"));
-        Level.add(new StringBuilder("space"));
-        Level.add(new StringBuilder("people"));
-        Level.add(new StringBuilder("date"));
-        Level.add(new StringBuilder("fact"));
         lvl = 0;
-        
+        chosenWordMP3 = new MediaPlayer(Level.get(lvl).getAudio());
+        chosenWordMP3.setRate(currentRate);
         game();
-        
-        
-    }
-    public void game(){
-        
 
+    }
+
+    public void game() {
+        
+        Image.setImage(Level.get(lvl).getImage());
+        wrongMP3 = new MediaPlayer(wrongAudio);
         correctMP3 = new MediaPlayer(correctAudio);
-        Level.get(lvl).getChars(0, Level.get(lvl).length(), pool, 0);
+        Level.get(lvl).getWord().getChars(0, Level.get(lvl).getWord().length(), pool, 0);
+
         Random r = new Random();
-        for (int i = Level.get(lvl).length(); i < 8; i++) {
+        for (int i = Level.get(lvl).getWord().length(); i < 8; i++) {
             char randC = (char) (r.nextInt(26) + 'a');
             if (!isContains(pool, randC)) {
                 pool[i] = randC;
@@ -154,14 +156,14 @@ public class SpillingFXMLController implements Initializable {
                 i--;
             }
         }
-        
+
         for (int i = 0; i < pool.length; i++) {
             int randomIndexToSwap = r.nextInt(pool.length);
             char temp = pool[randomIndexToSwap];
             pool[randomIndexToSwap] = pool[i];
             pool[i] = temp;
         }
-        
+
         btn1.setText(Character.toString(pool[0]));
         btn2.setText(Character.toString(pool[1]));
         btn3.setText(Character.toString(pool[2]));
@@ -170,8 +172,9 @@ public class SpillingFXMLController implements Initializable {
         btn6.setText(Character.toString(pool[5]));
         btn7.setText(Character.toString(pool[6]));
         btn8.setText(Character.toString(pool[7]));
+        
+    }
 
-}
     public boolean isContains(char[] ch, char c) {
         for (char i : ch) {
             if (i == c) {
@@ -186,7 +189,7 @@ public class SpillingFXMLController implements Initializable {
     private void btn1ltr(ActionEvent event) {
         answer.append(btn1.getText());
         Ltr1.setText(answer.toString());
-        
+
     }
 
     @FXML
@@ -232,26 +235,24 @@ public class SpillingFXMLController implements Initializable {
     }
 
     @FXML
-    private void soundbtn(ActionEvent event) {
-    }
-
-    @FXML
     private void checkBtn(ActionEvent event) {
-        if(answer.toString().equalsIgnoreCase(Level.get(lvl).toString())){
+        if (answer.toString().equalsIgnoreCase(Level.get(lvl).getWord())) {
             points.setText(Integer.toString(++countPoints));
             lvl++;
             Ltr1.setText(answer.delete(0, answer.length()).toString());
             correctMP3.seek(correctMP3.getStartTime());
             correctMP3.play();
             game();
-        }else{
-        misses.setText(Integer.toString(++countMisses));
+        } else {
+            misses.setText(Integer.toString(++countMisses));
+            wrongMP3.seek(wrongMP3.getStartTime());
+            wrongMP3.play();
         }
     }
 
     @FXML
     private void del(ActionEvent event) {
-        answer.delete(answer.length()-1, answer.length());
+        answer.delete(answer.length() - 1, answer.length());
         Ltr1.setText(answer.toString());
     }
 
@@ -267,15 +268,38 @@ public class SpillingFXMLController implements Initializable {
 
     @FXML
     private void soundClicked(ActionEvent event) {
-    }
-
-
-    @FXML
-    private void checkBtn(MouseEvent event) {
+        chosenWordMP3.seek(chosenWordMP3.getStartTime());
+        chosenWordMP3.play();
     }
 
     @FXML
-    private void del(MouseEvent event) {
+    private void easyClicked(ActionEvent event) {
+        currentRate = 0.75;
+        chosenWordMP3.setRate(currentRate);
+        easyButton.setStyle("-fx-background-color: orange;");
+        easyButton.setStyle("-fx-border-color: black;");
+        mediumButton.setStyle("-fx-background-color: gold;");
+        hardButton.setStyle("-fx-background-color: gold;");
+    }
+
+    @FXML
+    private void mediumClicked(ActionEvent event) {
+        currentRate = 0.8;
+        chosenWordMP3.setRate(currentRate);
+        easyButton.setStyle("-fx-background-color: gold;");
+        mediumButton.setStyle("-fx-background-color: orange;");
+        mediumButton.setStyle("-fx-border-color: black;");
+        hardButton.setStyle("-fx-background-color: gold;");
+    }
+
+    @FXML
+    private void hardClicked(ActionEvent event) {
+        currentRate = 1;
+        chosenWordMP3.setRate(currentRate);
+        easyButton.setStyle("-fx-background-color: gold;");
+        mediumButton.setStyle("-fx-background-color: gold;");
+        hardButton.setStyle("-fx-background-color: orange;");
+        hardButton.setStyle("-fx-border-color: black;");
     }
 
 }
