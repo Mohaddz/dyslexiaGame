@@ -4,20 +4,25 @@
  */
 
 import java.io.File;
+import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
 import java.util.ResourceBundle;
+import java.util.concurrent.TimeUnit;
+import java.util.logging.Logger;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 import javafx.scene.text.Text;
@@ -29,8 +34,8 @@ import javafx.scene.text.Text;
  */
 public class SpillingFXMLController implements Initializable {
 
-    int countPoints = 0;
-    int countMisses = 0;
+    static int countPoints = 0;
+    static int countMisses = 0;
     private int level = 0;
     int randomWord = 0;
     int randomImage = 0;
@@ -40,47 +45,10 @@ public class SpillingFXMLController implements Initializable {
     private Media wrongAudio = new Media(new File("src\\audio\\wrong.mp3").toURI().toString());
     private Media bgMusic = new Media(new File("src\\audio\\backgroundMusic.mp3").toURI().toString());
 
-//    private Image lakeImage = new Image("C:\\Users\\Mohad\\Documents\\NetBeansProjects\\dyslexiaGame\\src\\img\\Lake.png", 330, 353, true, true);
-//    private Media FirstAudio = new Media(new File("src\\audio\\Lake.mp3").toURI().toString());
-//    private rhymeWords lake = new rhymeWords("Lake", lakeImage, lakeAudio);
-//
-//    private Image cakeImage = new Image("src\\img\\cake.png", 330, 353, true, true);
-//    private Media cakeAudio = new Media(new File("src\\audio\\Cake.mp3").toURI().toString());
-//    private rhymeWords cake = new rhymeWords("Cake", cakeImage, cakeAudio);
-//
-//    private Image bookImage = new Image("src\\img\\book.png", 330, 353, true, true);
-//    private Media bookAudio = new Media(new File("src\\audio\\book.mp3").toURI().toString());
-//    private rhymeWords book = new rhymeWords("Book", bookImage, bookAudio);
-//
-//    private Image cookImage = new Image("src\\img\\cook.png", 330, 353, true, true);
-//    private Media cookAudio = new Media(new File("src\\audio\\cook.mp3").toURI().toString());
-//    private rhymeWords cook = new rhymeWords("Cook", cookImage, cookAudio);
-//    
-//    private Image barkImage = new Image("src\\img\\bark.png", 330, 353, true, true);
-//    private Media barkAudio = new Media(new File("src\\audio\\bark.mp3").toURI().toString());
-//    private rhymeWords bark = new rhymeWords("Bark", barkImage, barkAudio);
-//
-//    private Image parkImage = new Image("src\\img\\park.png", 330, 353, true, true);
-//    private Media parkAudio = new Media(new File("src\\audio\\park.mp3").toURI().toString());
-//    private rhymeWords park = new rhymeWords("Park", parkImage, parkAudio);
-//    
-//    private Image lampImage = new Image("src\\img\\lamp.png", 330, 353, true, true);
-//    private Media lampAudio = new Media(new File("src\\audio\\lamp.mp3").toURI().toString());
-//    private rhymeWords lamp = new rhymeWords("lamp", lampImage, lampAudio);
-//    
-//    private Image campImage = new Image("src\\img\\camp.png", 330, 353, true, true);
-//    private Media campAudio = new Media(new File("src\\audio\\camp.mp3").toURI().toString());
-//    private rhymeWords camp = new rhymeWords("camp", campImage, campAudio);
-//    
-//    private Image batImage = new Image("src\\img\\bat.png", 330, 353, true, true);
-//    private Media batAudio = new Media(new File("src\\audio\\bat.mp3").toURI().toString());
-//    private rhymeWords bat = new rhymeWords("Bat", batImage, batAudio);
-//    
-//    private Image catImage = new Image("src\\img\\cat.png", 330, 353, true, true);
-//    private Media catAudio = new Media(new File("src\\audio\\cat.mp3").toURI().toString());
-//    private rhymeWords cat = new rhymeWords("Cat", catImage, catAudio);
+
     MediaPlayer chosenWordMP3;
     MediaPlayer wrongMP3;
+    MediaPlayer bgMusicMP3;
     int lvl = 0;
     char[] pool = new char[8];
     StringBuilder answer = new StringBuilder();
@@ -120,7 +88,8 @@ public class SpillingFXMLController implements Initializable {
     private Button mediumButton;
     @FXML
     private Button hardButton;
-
+    @FXML
+    private AnchorPane gamePane;
     /**
      * Initializes the controller class.
      */
@@ -133,14 +102,34 @@ public class SpillingFXMLController implements Initializable {
         Level.add(new rhymeWords("date", new Image("C:\\Users\\Mohad\\Documents\\NetBeansProjects\\dyslexiaGame\\src\\img\\date.png", 330, 353, true, true), new Media(new File("src\\audio\\date.mp3").toURI().toString())));
         Level.add(new rhymeWords("fact", new Image("C:\\Users\\Mohad\\Documents\\NetBeansProjects\\dyslexiaGame\\src\\img\\fact.png", 330, 353, true, true), new Media(new File("src\\audio\\fact.mp3").toURI().toString())));
         
+                bgMusicMP3 = new MediaPlayer(bgMusic);
+        bgMusicMP3.setVolume(0.2);
+        bgMusicMP3.setRate(0.9);
+        bgMusicMP3.play();
+        bgMusicMP3.setCycleCount(MediaPlayer.INDEFINITE);
+        hardButton.setStyle("-fx-background-color: orange;");
+        hardButton.setStyle("-fx-border-color: black;");
+        
         lvl = 0;
-        chosenWordMP3 = new MediaPlayer(Level.get(lvl).getAudio());
-        chosenWordMP3.setRate(currentRate);
-        game();
-
+        try {
+            game();
+        } catch (IOException ex) {
+            Logger.getLogger(SpillingFXMLController.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (InterruptedException ex) {
+            Logger.getLogger(SpillingFXMLController.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        }
+        
     }
 
-    public void game() {
+    public void game() throws IOException, InterruptedException {
+            if (lvl == Level.size()) {
+            TimeUnit.SECONDS.sleep(1);
+            AnchorPane endScreen = FXMLLoader.load(getClass().getResource("endSreenFXML.fxml"));
+            gamePane.getChildren().setAll(endScreen);
+            }
+                
+        chosenWordMP3 = new MediaPlayer(Level.get(lvl).getAudio());
+        chosenWordMP3.setRate(currentRate);
         
         Image.setImage(Level.get(lvl).getImage());
         wrongMP3 = new MediaPlayer(wrongAudio);
@@ -235,7 +224,7 @@ public class SpillingFXMLController implements Initializable {
     }
 
     @FXML
-    private void checkBtn(ActionEvent event) {
+    private void checkBtn(ActionEvent event) throws IOException, InterruptedException {
         if (answer.toString().equalsIgnoreCase(Level.get(lvl).getWord())) {
             points.setText(Integer.toString(++countPoints));
             lvl++;

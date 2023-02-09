@@ -2,99 +2,77 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.Menu?>
-<?import javafx.scene.control.MenuBar?>
-<?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane id="AnchorPane" prefHeight="794.0" prefWidth="1104.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="SpillingFXMLController">
+<AnchorPane id="AnchorPane" fx:id="gamePane" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="897.0" prefWidth="1690.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="SpillingFXMLController">
    <children>
-      <MenuBar layoutY="2.0" prefHeight="25.0" prefWidth="1922.0">
-        <menus>
-          <Menu mnemonicParsing="false" text="File">
-            <items>
-              <MenuItem mnemonicParsing="false" text="Close" />
-            </items>
-          </Menu>
-          <Menu mnemonicParsing="false" text="Edit">
-            <items>
-              <MenuItem mnemonicParsing="false" text="Delete" />
-            </items>
-          </Menu>
-          <Menu mnemonicParsing="false" text="Help">
-            <items>
-              <MenuItem mnemonicParsing="false" text="About" />
-            </items>
-          </Menu>
-        </menus>
-      </MenuBar>
-      <ImageView fitHeight="1054.0" fitWidth="1350.0" layoutX="355.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="355.0" AnchorPane.rightAnchor="217.0">
+      <ImageView fitHeight="768.0" fitWidth="1201.0" layoutX="380.0" layoutY="87.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="42.0" AnchorPane.leftAnchor="380.0" AnchorPane.rightAnchor="350.0" AnchorPane.topAnchor="87.0">
          <image>
             <Image url="@img/BG.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="Image" fitHeight="424.0" fitWidth="684.0" layoutX="660.0" layoutY="182.0" pickOnBounds="true" preserveRatio="true" />
-      <Button fx:id="btn1" layoutX="659.0" layoutY="724.0" mnemonicParsing="false" onAction="#btn1ltr" prefHeight="144.0" prefWidth="144.0">
+      <ImageView fx:id="Image" fitHeight="244.0" fitWidth="445.0" layoutX="640.0" layoutY="221.0" pickOnBounds="true" preserveRatio="true" />
+      <Button fx:id="btn1" layoutX="576.0" layoutY="589.0" mnemonicParsing="false" onAction="#btn1ltr" prefHeight="144.0" prefWidth="144.0" scaleX="0.8" scaleY="0.8" style="-fx-border-width: 5; -fx-border-color: white; -fx-background-color: BURLYWOOD; -fx-border-radius: 40; -fx-background-radius: 40;" stylesheets="@css/Litter.css">
          <font>
             <Font size="35.0" />
          </font></Button>
-      <Button fx:id="btn2" layoutX="837.0" layoutY="724.0" mnemonicParsing="false" onAction="#btn2ltr" prefHeight="144.0" prefWidth="144.0">
+      <Button fx:id="btn2" layoutX="708.0" layoutY="587.0" mnemonicParsing="false" onAction="#btn2ltr" prefHeight="144.0" prefWidth="144.0" scaleX="0.8" scaleY="0.8" stylesheets="@css/Litter.css">
          <font>
             <Font size="35.0" />
          </font></Button>
-      <Button fx:id="btn3" layoutX="1019.0" layoutY="726.0" mnemonicParsing="false" onAction="#btn3ltr" prefHeight="144.0" prefWidth="144.0">
+      <Button fx:id="btn3" layoutX="840.0" layoutY="589.0" mnemonicParsing="false" onAction="#btn3ltr" prefHeight="144.0" prefWidth="144.0" scaleX="0.8" scaleY="0.8" stylesheets="@css/Litter.css">
          <font>
             <Font size="35.0" />
          </font></Button>
-      <Button fx:id="btn4" layoutX="1200.0" layoutY="726.0" mnemonicParsing="false" onAction="#btn4ltr" prefHeight="144.0" prefWidth="144.0">
+      <Button fx:id="btn4" layoutX="968.0" layoutY="589.0" mnemonicParsing="false" onAction="#btn4ltr" prefHeight="144.0" prefWidth="144.0" scaleX="0.8" scaleY="0.8" stylesheets="@css/Litter.css">
          <font>
             <Font size="35.0" />
          </font></Button>
-      <Button fx:id="btn5" layoutX="660.0" layoutY="905.0" mnemonicParsing="false" onAction="#btn5ltr" prefHeight="144.0" prefWidth="144.0">
+      <Button fx:id="btn5" layoutX="576.0" layoutY="715.0" mnemonicParsing="false" onAction="#btn5ltr" prefHeight="144.0" prefWidth="144.0" scaleX="0.8" scaleY="0.8" stylesheets="@css/Litter.css">
          <font>
             <Font size="35.0" />
          </font></Button>
-      <Button fx:id="btn6" layoutX="838.0" layoutY="907.0" mnemonicParsing="false" onAction="#btn6ltr" prefHeight="144.0" prefWidth="144.0">
+      <Button fx:id="btn6" layoutX="708.0" layoutY="715.0" mnemonicParsing="false" onAction="#btn6ltr" prefHeight="144.0" prefWidth="144.0" scaleX="0.8" scaleY="0.8" stylesheets="@css/Litter.css">
          <font>
             <Font size="35.0" />
          </font></Button>
-      <Button fx:id="btn7" layoutX="1018.0" layoutY="910.0" mnemonicParsing="false" onAction="#btn7ltr" prefHeight="144.0" prefWidth="144.0">
+      <Button fx:id="btn7" layoutX="840.0" layoutY="715.0" mnemonicParsing="false" onAction="#btn7ltr" prefHeight="144.0" prefWidth="144.0" scaleX="0.8" scaleY="0.8" stylesheets="@css/Litter.css">
          <font>
             <Font size="35.0" />
          </font></Button>
-      <Button fx:id="btn8" layoutX="1200.0" layoutY="905.0" mnemonicParsing="false" onAction="#btn8ltr" prefHeight="144.0" prefWidth="144.0">
+      <Button fx:id="btn8" layoutX="968.0" layoutY="715.0" mnemonicParsing="false" onAction="#btn8ltr" prefHeight="144.0" prefWidth="144.0" scaleX="0.8" scaleY="0.8" stylesheets="@css/Litter.css">
          <font>
             <Font size="35.0" />
          </font></Button>
-      <Label fx:id="Ltr1" alignment="CENTER" layoutX="619.0" layoutY="618.0" prefHeight="86.0" prefWidth="694.0">
+      <Label fx:id="Ltr1" alignment="CENTER" layoutX="590.0" layoutY="505.0" prefHeight="77.0" prefWidth="531.0">
          <font>
             <Font size="34.0" />
          </font></Label>
-      <Text fill="WHITE" layoutX="849.0" layoutY="153.0" stroke="#000000fc" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeType="OUTSIDE" strokeWidth="2.0" text="Points: " wrappingWidth="148.13671875">
+      <Text fill="WHITE" layoutX="706.0" layoutY="147.0" stroke="#000000fc" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeType="OUTSIDE" strokeWidth="2.0" text="Points: " wrappingWidth="148.13671875">
          <font>
             <Font name="System Bold" size="27.0" />
          </font>
       </Text>
-      <Text fill="WHITE" layoutX="1114.0" layoutY="153.0" stroke="#000000fc" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeType="OUTSIDE" strokeWidth="2.0" text="Misses: " wrappingWidth="148.13671875">
+      <Text fill="WHITE" layoutX="943.0" layoutY="146.0" stroke="#000000fc" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeType="OUTSIDE" strokeWidth="2.0" text="Misses: " wrappingWidth="148.13671875">
          <font>
             <Font name="System Bold" size="27.0" />
          </font>
       </Text>
-      <Text fx:id="points" fill="WHITE" layoutX="945.0" layoutY="154.0" stroke="#000000fc" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeType="OUTSIDE" strokeWidth="2.0" text="0" wrappingWidth="41.13671875">
+      <Text fx:id="points" fill="WHITE" layoutX="802.0" layoutY="148.0" stroke="#000000fc" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeType="OUTSIDE" strokeWidth="2.0" text="0" wrappingWidth="41.13671875">
          <font>
             <Font name="System Bold" size="27.0" />
          </font>
       </Text>
-      <Text fx:id="misses" fill="WHITE" layoutX="1200.0" layoutY="152.0" stroke="#000000fc" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeType="OUTSIDE" strokeWidth="2.0" text="0" textAlignment="CENTER" wrappingWidth="41.13671875">
+      <Text fx:id="misses" fill="WHITE" layoutX="1029.0" layoutY="145.0" stroke="#000000fc" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeType="OUTSIDE" strokeWidth="2.0" text="0" textAlignment="CENTER" wrappingWidth="41.13671875">
          <font>
             <Font name="System Bold" size="27.0" />
          </font>
       </Text>
-      <Button fx:id="exitGame" contentDisplay="CENTER" layoutX="1424.0" layoutY="111.0" mnemonicParsing="false" onAction="#exitClicked" prefHeight="57.0" prefWidth="175.0" style="-fx-border-width: 3;" stylesheets="@css/button.css" textAlignment="CENTER" textFill="WHITE">
+      <Button fx:id="exitGame" contentDisplay="CENTER" layoutX="1139.0" layoutY="113.0" mnemonicParsing="false" onAction="#exitClicked" prefHeight="57.0" prefWidth="175.0" style="-fx-border-width: 3;" stylesheets="@css/button.css" textAlignment="CENTER" textFill="WHITE">
          <font>
             <Font name="System Bold" size="27.0" />
          </font>
@@ -106,19 +84,19 @@
             </Text>
          </graphic>
       </Button>
-      <Button fx:id="sound" layoutX="506.0" layoutY="188.0" mnemonicParsing="false" onAction="#soundClicked" prefHeight="36.0" prefWidth="62.0" style="-fx-border-width: 3;" stylesheets="@css/button.css" textAlignment="CENTER" textFill="WHITE">
+      <Button fx:id="sound" layoutX="448.0" layoutY="109.0" mnemonicParsing="false" onAction="#soundClicked" prefHeight="36.0" prefWidth="62.0" style="-fx-border-width: 3;" stylesheets="@css/button.css" textAlignment="CENTER" textFill="WHITE">
          <font>
             <Font name="System Bold" size="27.0" />
          </font>
          <graphic>
             <ImageView fitHeight="33.0" fitWidth="29.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="C:\Users\Mohad\Documents\NetBeansProjects\dyslexiaGame\src\img\sound.png" />
+                  <Image url="@img\sound.png" />
                </image>
             </ImageView>
          </graphic>
       </Button>
-      <Button contentDisplay="CENTER" layoutX="1425.0" layoutY="558.0" mnemonicParsing="false" onAction="#checkBtn" prefHeight="57.0" prefWidth="175.0" style="-fx-border-width: 3;" stylesheets="@css/button.css" textAlignment="CENTER" textFill="WHITE">
+      <Button contentDisplay="CENTER" layoutX="1139.0" layoutY="522.0" mnemonicParsing="false" onAction="#checkBtn" prefHeight="57.0" prefWidth="175.0" style="-fx-border-width: 3;" stylesheets="@css/button.css" textAlignment="CENTER" textFill="WHITE">
          <font>
             <Font name="System Bold" size="27.0" />
          </font>
@@ -130,7 +108,7 @@
             </Text>
          </graphic>
       </Button>
-      <Button contentDisplay="CENTER" layoutX="1425.0" layoutY="914.0" mnemonicParsing="false" onAction="#del" prefHeight="18.0" prefWidth="189.0" style="-fx-border-width: 3;" stylesheets="@css/button.css" textAlignment="CENTER" textFill="WHITE">
+      <Button contentDisplay="CENTER" layoutX="1139.0" layoutY="719.0" mnemonicParsing="false" onAction="#del" prefHeight="18.0" prefWidth="189.0" style="-fx-border-width: 3;" stylesheets="@css/button.css" textAlignment="CENTER" textFill="WHITE">
          <font>
             <Font name="System Bold" size="27.0" />
          </font>
@@ -142,7 +120,7 @@
             </Text>
          </graphic>
       </Button>
-      <Button contentDisplay="CENTER" layoutX="1424.0" layoutY="835.0" mnemonicParsing="false" onAction="#clear" prefHeight="18.0" prefWidth="189.0" style="-fx-border-width: 3;" stylesheets="@css/button.css" textAlignment="CENTER" textFill="WHITE">
+      <Button contentDisplay="CENTER" layoutX="1141.0" layoutY="619.0" mnemonicParsing="false" onAction="#clear" prefHeight="60.0" prefWidth="106.0" style="-fx-border-width: 3;" stylesheets="@css/button.css" textAlignment="CENTER" textFill="WHITE">
          <font>
             <Font name="System Bold" size="27.0" />
          </font>
@@ -154,7 +132,7 @@
             </Text>
          </graphic>
       </Button>
-      <Button fx:id="easyButton" contentDisplay="CENTER" layoutX="467.0" layoutY="277.0" mnemonicParsing="false" onAction="#easyClicked" prefHeight="63.0" prefWidth="148.0" style="-fx-border-width: 3; -fx-background-color: gold;" stylesheets="@css/button.css" textAlignment="CENTER" textFill="WHITE">
+      <Button fx:id="easyButton" contentDisplay="CENTER" layoutX="409.0" layoutY="230.0" mnemonicParsing="false" onAction="#easyClicked" prefHeight="63.0" prefWidth="148.0" style="-fx-border-width: 3; -fx-background-color: gold;" stylesheets="@css/button.css" textAlignment="CENTER" textFill="WHITE">
          <font>
             <Font name="System Bold" size="27.0" />
          </font>
@@ -166,7 +144,7 @@
             </Text>
          </graphic>
       </Button>
-      <Button fx:id="mediumButton" contentDisplay="CENTER" layoutX="468.0" layoutY="349.0" mnemonicParsing="false" onAction="#mediumClicked" prefHeight="63.0" prefWidth="148.0" style="-fx-border-width: 3; -fx-background-color: gold;" stylesheets="@css/button.css" textAlignment="CENTER" textFill="WHITE">
+      <Button fx:id="mediumButton" contentDisplay="CENTER" layoutX="408.0" layoutY="314.0" mnemonicParsing="false" onAction="#mediumClicked" prefHeight="63.0" prefWidth="148.0" style="-fx-border-width: 3; -fx-background-color: gold;" stylesheets="@css/button.css" textAlignment="CENTER" textFill="WHITE">
          <font>
             <Font name="System Bold" size="27.0" />
          </font>
@@ -178,7 +156,7 @@
             </Text>
          </graphic>
       </Button>
-      <Button fx:id="hardButton" contentDisplay="CENTER" layoutX="469.0" layoutY="421.0" mnemonicParsing="false" onAction="#hardClicked" prefHeight="63.0" prefWidth="148.0" style="-fx-border-width: 3; -fx-background-color: gold;" stylesheets="@css/button.css" textAlignment="CENTER" textFill="WHITE">
+      <Button fx:id="hardButton" contentDisplay="CENTER" layoutX="408.0" layoutY="402.0" mnemonicParsing="false" onAction="#hardClicked" prefHeight="63.0" prefWidth="148.0" style="-fx-border-width: 3; -fx-background-color: gold;" stylesheets="@css/button.css" textAlignment="CENTER" textFill="WHITE">
          <font>
             <Font name="System Bold" size="27.0" />
          </font>

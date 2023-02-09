@@ -18,7 +18,7 @@
    <children>
       <ImageView fitHeight="770.0" fitWidth="1104.0" layoutY="24.0">
          <image>
-            <Image url="C:\Users\moham\Documents\NetBeansProjectsb\dyslexiaGame\src\img\BG.png" />
+            <Image url="@img\BG.png" />
          </image>
       </ImageView>
       <MenuBar layoutY="-1.0" prefHeight="27.0" prefWidth="1104.0" style="-fx-background-color: skyblue;">
@@ -42,7 +42,7 @@
       </MenuBar>
       <ImageView fx:id="image1" fitHeight="328.0" fitWidth="314.0" layoutX="126.0" layoutY="245.0" pickOnBounds="true">
          <image>
-            <Image url="C:\Users\moham\Documents\NetBeansProjectsb\dyslexiaGame\src\img\whiteBG.jpg" />
+            <Image url="@img\whiteBG.jpg" />
          </image>
       </ImageView>
       <Rectangle arcHeight="5.0" arcWidth="5.0" height="144.0" layoutX="120.0" layoutY="53.0" stroke="#fffffffc" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeWidth="0.0" style="-fx-arc-height: 50; -fx-arc-width: 50;" width="865.0">
@@ -70,7 +70,7 @@
          <graphic>
             <ImageView fitHeight="33.0" fitWidth="29.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="C:\Users\moham\Documents\NetBeansProjectsb\dyslexiaGame\src\img\sound.png" />
+                  <Image url="@img\sound.png" />
                </image>
             </ImageView>
          </graphic>
@@ -133,7 +133,7 @@
       </Button>
       <ImageView fx:id="image2" fitHeight="328.0" fitWidth="314.0" layoutX="665.0" layoutY="245.0" pickOnBounds="true">
          <image>
-            <Image url="C:\Users\moham\Documents\NetBeansProjectsb\dyslexiaGame\src\img\whiteBG.jpg" />
+            <Image url="@img\whiteBG.jpg" />
          </image>
       </ImageView>
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffffff00" height="328.0" layoutX="126.0" layoutY="245.0" stroke="WHITE" strokeType="INSIDE" strokeWidth="5.0" width="314.0" />

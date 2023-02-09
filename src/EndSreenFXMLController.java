@@ -21,6 +21,8 @@ public class EndSreenFXMLController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         points.setText(Integer.toString(DyslexiaFXMLController.countPoints));
         misses.setText(Integer.toString(DyslexiaFXMLController.countMisses));
+        points.setText(Integer.toString(SpillingFXMLController.countPoints));
+        misses.setText(Integer.toString(SpillingFXMLController.countMisses));
     }    
 
     @FXML
