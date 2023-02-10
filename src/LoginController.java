@@ -75,6 +75,7 @@ public class LoginController implements Initializable {
                         loginPane.getChildren().setAll(mainMenu);
                         break;
                     } else {
+                        mainMenuController.bgMusicMP3.stop();
                         errorMessage.setText("Wrong Password");
                         found = true;
                         break;
