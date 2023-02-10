@@ -1,5 +1,3 @@
-
-import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -9,14 +7,12 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.layout.AnchorPane;
-import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 import javafx.scene.text.Text;
 
 public class EndSreenFXMLController implements Initializable {
 
     MediaPlayer bgMusicMP3;
-    //private Media bgMusic = new Media(new File("src\\audio\\backgroundMusic.mp3").toURI().toString());
     
     @FXML
     private Text points;
@@ -29,9 +25,6 @@ public class EndSreenFXMLController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-//        bgMusicMP3 = new MediaPlayer(bgMusic);
-//        bgMusicMP3.setVolume(0.2);
-//        bgMusicMP3.setRate(0.9);
         mainMenuController.bgMusicMP3.play();
         mainMenuController.bgMusicMP3.setCycleCount(MediaPlayer.INDEFINITE);
         if (mainMenuController.gameChoice == 0) {

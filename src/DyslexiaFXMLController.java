@@ -17,11 +17,6 @@ import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 import javafx.scene.text.Text;
 
-/**
- * FXML Controller class
- *
- * @author moham
- */
 public class DyslexiaFXMLController implements Initializable {
 
     public static int countPoints = 0;
@@ -33,7 +28,6 @@ public class DyslexiaFXMLController implements Initializable {
     rhymeWords chosenWord;
     private Media correctAudio = new Media(new File("src\\audio\\correct.mp3").toURI().toString());
     private Media wrongAudio = new Media(new File("src\\audio\\wrong.mp3").toURI().toString());
-    //private Media bgMusic = new Media(new File("src\\audio\\backgroundMusic.mp3").toURI().toString());
 
     private Image lakeImage = new Image("C:/Users/moham/Documents/NetBeansProjectsb/dyslexiaGame/src/img/Lake.png", 330, 353, true, true);
     private Media lakeAudio = new Media(new File("src\\audio\\Lake.mp3").toURI().toString());
@@ -88,7 +82,7 @@ public class DyslexiaFXMLController implements Initializable {
     MediaPlayer chosenWordMP3;
     MediaPlayer correctMP3;
     MediaPlayer wrongMP3;
-    //MediaPlayer bgMusicMP3;
+
     @FXML
     private ImageView image1;
     @FXML
@@ -144,9 +138,6 @@ public class DyslexiaFXMLController implements Initializable {
         chosenWordMP3 = new MediaPlayer(chosenWord.getAudio());
         correctMP3 = new MediaPlayer(correctAudio);
         wrongMP3 = new MediaPlayer(wrongAudio);
-//        bgMusicMP3 = new MediaPlayer(bgMusic);
-//        bgMusicMP3.setVolume(0.2);
-//        bgMusicMP3.setRate(0.9);
         mainMenuController.bgMusicMP3.play();
         mainMenuController.bgMusicMP3.setCycleCount(MediaPlayer.INDEFINITE);
         hardButton.setStyle("-fx-background-color: orange;");

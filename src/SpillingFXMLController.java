@@ -1,14 +1,7 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/javafx/FXMLController.java to edit this template
- */
-
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
 import java.util.Random;
 import java.util.ResourceBundle;
 import java.util.concurrent.TimeUnit;
@@ -21,17 +14,11 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 import javafx.scene.text.Text;
 
-/**
- * FXML Controller class
- *
- * @author Mohad
- */
 public class SpillingFXMLController implements Initializable {
 
     static int countPoints = 0;
@@ -40,12 +27,9 @@ public class SpillingFXMLController implements Initializable {
     rhymeWords chosenWord;
     private Media correctAudio = new Media(new File("src\\audio\\correct.mp3").toURI().toString());
     private Media wrongAudio = new Media(new File("src\\audio\\wrong.mp3").toURI().toString());
-    private Media bgMusic = new Media(new File("src\\audio\\backgroundMusic.mp3").toURI().toString());
-
 
     MediaPlayer chosenWordMP3;
     MediaPlayer wrongMP3;
-    MediaPlayer bgMusicMP3;
     int lvl = 0;
     char[] pool = new char[8];
     StringBuilder answer = new StringBuilder();
@@ -87,23 +71,18 @@ public class SpillingFXMLController implements Initializable {
     private Button hardButton;
     @FXML
     private AnchorPane gamePane;
-    /**
-     * Initializes the controller class.
-     */
+
+    
     @Override
     public void initialize(URL url, ResourceBundle rb) {
 
-        Level.add(new rhymeWords("first", new Image("C:\\Users\\Mohad\\Documents\\NetBeansProjects\\dyslexiaGame\\src\\img\\first.png", 330, 353, true, true), new Media(new File("src\\audio\\first.mp3").toURI().toString())));
-        Level.add(new rhymeWords("space", new Image("C:\\Users\\Mohad\\Documents\\NetBeansProjects\\dyslexiaGame\\src\\img\\space.jpg", 330, 353, true, true), new Media(new File("src\\audio\\space.mp3").toURI().toString())));
-        Level.add(new rhymeWords("people", new Image("C:\\Users\\Mohad\\Documents\\NetBeansProjects\\dyslexiaGame\\src\\img\\people.png", 330, 353, true, true), new Media(new File("src\\audio\\people.mp3").toURI().toString())));
-        Level.add(new rhymeWords("date", new Image("C:\\Users\\Mohad\\Documents\\NetBeansProjects\\dyslexiaGame\\src\\img\\date.png", 330, 353, true, true), new Media(new File("src\\audio\\date.mp3").toURI().toString())));
-        Level.add(new rhymeWords("fact", new Image("C:\\Users\\Mohad\\Documents\\NetBeansProjects\\dyslexiaGame\\src\\img\\fact.png", 330, 353, true, true), new Media(new File("src\\audio\\fact.mp3").toURI().toString())));
-        
-                bgMusicMP3 = new MediaPlayer(bgMusic);
-        bgMusicMP3.setVolume(0.2);
-        bgMusicMP3.setRate(0.9);
-        bgMusicMP3.play();
-        bgMusicMP3.setCycleCount(MediaPlayer.INDEFINITE);
+        Level.add(new rhymeWords("first", new Image("C:\\Users\\moham\\Documents\\NetBeansProjectsb\\dyslexiaGame\\src\\img\\First.png", 330, 353, true, true), new Media(new File("src\\audio\\first.mp3").toURI().toString())));
+        Level.add(new rhymeWords("space", new Image("C:\\Users\\moham\\Documents\\NetBeansProjectsb\\dyslexiaGame\\src\\img\\space.jpg", 330, 353, true, true), new Media(new File("src\\audio\\space.mp3").toURI().toString())));
+        Level.add(new rhymeWords("people", new Image("C:\\Users\\moham\\Documents\\NetBeansProjectsb\\dyslexiaGame\\src\\img\\people.png", 330, 353, true, true), new Media(new File("src\\audio\\people.mp3").toURI().toString())));
+        Level.add(new rhymeWords("date", new Image("C:\\Users\\moham\\Documents\\NetBeansProjectsb\\dyslexiaGame\\src\\img\\date.png", 330, 353, true, true), new Media(new File("src\\audio\\date.mp3").toURI().toString())));
+        Level.add(new rhymeWords("fact", new Image("C:\\Users\\moham\\Documents\\NetBeansProjectsb\\dyslexiaGame\\src\\img\\fact.png", 330, 353, true, true), new Media(new File("src\\audio\\fact.mp3").toURI().toString())));
+        mainMenuController.bgMusicMP3.play();
+        mainMenuController.bgMusicMP3.setCycleCount(MediaPlayer.INDEFINITE);
         hardButton.setStyle("-fx-background-color: orange;");
         hardButton.setStyle("-fx-border-color: black;");
         
@@ -249,7 +228,10 @@ public class SpillingFXMLController implements Initializable {
     }
 
     @FXML
-    private void exitClicked(ActionEvent event) {
+    private void exitClicked(ActionEvent event) throws IOException {
+         AnchorPane mainMenu = FXMLLoader.load(getClass().getResource("mainMenu.fxml"));
+         mainMenuController.bgMusicMP3.stop();
+         gamePane.getChildren().setAll(mainMenu);
     }
 
     @FXML
