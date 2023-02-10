@@ -36,9 +36,6 @@ public class SpillingFXMLController implements Initializable {
 
     static int countPoints = 0;
     static int countMisses = 0;
-    private int level = 0;
-    int randomWord = 0;
-    int randomImage = 0;
     double currentRate = 1;
     rhymeWords chosenWord;
     private Media correctAudio = new Media(new File("src\\audio\\correct.mp3").toURI().toString());

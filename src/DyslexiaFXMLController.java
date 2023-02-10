@@ -33,7 +33,7 @@ public class DyslexiaFXMLController implements Initializable {
     rhymeWords chosenWord;
     private Media correctAudio = new Media(new File("src\\audio\\correct.mp3").toURI().toString());
     private Media wrongAudio = new Media(new File("src\\audio\\wrong.mp3").toURI().toString());
-    private Media bgMusic = new Media(new File("src\\audio\\backgroundMusic.mp3").toURI().toString());
+    //private Media bgMusic = new Media(new File("src\\audio\\backgroundMusic.mp3").toURI().toString());
 
     private Image lakeImage = new Image("C:/Users/moham/Documents/NetBeansProjectsb/dyslexiaGame/src/img/Lake.png", 330, 353, true, true);
     private Media lakeAudio = new Media(new File("src\\audio\\Lake.mp3").toURI().toString());
@@ -88,7 +88,7 @@ public class DyslexiaFXMLController implements Initializable {
     MediaPlayer chosenWordMP3;
     MediaPlayer correctMP3;
     MediaPlayer wrongMP3;
-    MediaPlayer bgMusicMP3;
+    //MediaPlayer bgMusicMP3;
     @FXML
     private ImageView image1;
     @FXML
@@ -144,11 +144,11 @@ public class DyslexiaFXMLController implements Initializable {
         chosenWordMP3 = new MediaPlayer(chosenWord.getAudio());
         correctMP3 = new MediaPlayer(correctAudio);
         wrongMP3 = new MediaPlayer(wrongAudio);
-        bgMusicMP3 = new MediaPlayer(bgMusic);
-        bgMusicMP3.setVolume(0.2);
-        bgMusicMP3.setRate(0.9);
-        bgMusicMP3.play();
-        bgMusicMP3.setCycleCount(MediaPlayer.INDEFINITE);
+//        bgMusicMP3 = new MediaPlayer(bgMusic);
+//        bgMusicMP3.setVolume(0.2);
+//        bgMusicMP3.setRate(0.9);
+        mainMenuController.bgMusicMP3.play();
+        mainMenuController.bgMusicMP3.setCycleCount(MediaPlayer.INDEFINITE);
         hardButton.setStyle("-fx-background-color: orange;");
         hardButton.setStyle("-fx-border-color: black;");
     }
@@ -161,8 +161,10 @@ public class DyslexiaFXMLController implements Initializable {
     }
 
     @FXML
-    private void exitClicked(ActionEvent event) {
-        System.exit(0);
+    private void exitClicked(ActionEvent event) throws IOException {
+         AnchorPane mainMenu = FXMLLoader.load(getClass().getResource("mainMenu.fxml"));
+         mainMenuController.bgMusicMP3.stop();
+         gamePane.getChildren().setAll(mainMenu);
     }
 
     @FXML

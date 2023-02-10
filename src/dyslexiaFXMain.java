@@ -25,7 +25,7 @@ public class dyslexiaFXMain extends Application {
 
     @Override
     public void start(Stage primaryStage) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("SpillingFXML.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("loginPage.fxml"));
         
         Scene scene = new Scene(root);
         
