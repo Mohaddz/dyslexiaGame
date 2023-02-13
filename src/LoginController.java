@@ -6,6 +6,7 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.Locale;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -44,16 +45,33 @@ public class LoginController implements Initializable {
     private Text errorMessage;
     @FXML
     private AnchorPane loginPane;
-
+    int lan;
+    String [] language = {"ar","en"};
+    String [] country = {"SA","US"};
+    Locale currentLocale;
+    ResourceBundle messages;
+    @FXML
+    private Button ar;
+    @FXML
+    private Button en;
+    @FXML
+    private Text Welcomey;
+    @FXML
+    private Text usery;
+    @FXML
+    private Text passy;
+    @FXML
+    private Text loggy;
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-
+            
     }
 
     @FXML
     private void processLogin(ActionEvent event) throws IOException {
+        
         AnchorPane mainMenu = FXMLLoader.load(getClass().getResource("mainMenu.fxml"));
-        url1 = "jdbc:derby://localhost:1527/cpcs";
+        url1 = "jdbc:derby://localhost:1527/sample";
         userName = userId.getText();
         userPassword = password.getText();
         String query = "SELECT name,passwod FROM player";
@@ -93,6 +111,32 @@ public class LoginController implements Initializable {
         } catch (SQLException e) {
             System.out.println("SQL Exception: " + e);
         }
+    }
+
+    @FXML
+    private void arButton(ActionEvent event) {
+        lan = 0;
+        currentLocale = new Locale(language[lan]);
+            messages = ResourceBundle.getBundle("_"+currentLocale);
+            usery.setText(messages.getString("User"));
+            passy.setText(messages.getString("Pass"));
+            Welcomey.setText(messages.getString("Wel"));
+            loggy.setText(messages.getString("log"));
+            userId.setPromptText(messages.getString("User"));
+            password.setPromptText(messages.getString("Pass"));
+    }
+
+    @FXML
+    private void enButton(ActionEvent event) {
+        lan = 1 ;
+        currentLocale = new Locale(language[lan]);
+            messages = ResourceBundle.getBundle("_"+currentLocale);
+            usery.setText(messages.getString("User"));
+            passy.setText(messages.getString("Pass"));
+            Welcomey.setText(messages.getString("Wel"));
+            loggy.setText(messages.getString("log"));
+            userId.setPromptText(messages.getString("User"));
+            password.setPromptText(messages.getString("Pass"));
     }
 
 }

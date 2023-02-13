@@ -75,20 +75,20 @@
       <children>
         <VBox id="VBox" alignment="CENTER" layoutX="35.0" layoutY="46.0" prefHeight="300.0" prefWidth="421.0" spacing="5.0" AnchorPane.bottomAnchor="-46.0" AnchorPane.leftAnchor="35.0" AnchorPane.rightAnchor="34.0" AnchorPane.topAnchor="46.0">
           <children>
-                  <Text fill="WHITE" stroke="#000000fc" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeType="OUTSIDE" strokeWidth="2.0" text="Welcome" textAlignment="CENTER" wrappingWidth="244.13671875">
+                  <Text fx:id="Welcomey" fill="WHITE" stroke="#000000fc" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeType="OUTSIDE" strokeWidth="2.0" text="Welcome" textAlignment="CENTER" wrappingWidth="244.13671875">
                      <font>
                         <Font name="System Bold" size="53.0" />
                      </font>
                   </Text>
             <AnchorPane id="AnchorPane" prefHeight="209.0" prefWidth="793.0">
               <children>
-                        <Text fill="WHITE" layoutX="14.0" layoutY="59.0" stroke="#000000fc" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeType="OUTSIDE" text="Username" wrappingWidth="145.13671875">
+                        <Text fx:id="usery" fill="WHITE" layoutX="14.0" layoutY="59.0" stroke="#000000fc" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeType="OUTSIDE" text="Username" wrappingWidth="145.13671875">
                            <font>
                               <Font name="System Bold" size="20.0" />
                            </font>
                         </Text>
                 <TextField id="textField1" fx:id="userId" layoutX="10.0" layoutY="72.0" prefHeight="33.0" prefWidth="696.0" promptText="Username" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="0.0" />
-                        <Text fill="WHITE" layoutX="14.0" layoutY="149.0" stroke="#000000fc" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeType="OUTSIDE" text="Password" wrappingWidth="145.13671875">
+                        <Text fx:id="passy" fill="WHITE" layoutX="14.0" layoutY="149.0" stroke="#000000fc" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeType="OUTSIDE" text="Password" wrappingWidth="145.13671875">
                            <font>
                               <Font name="System Bold" size="20.0" />
                            </font>
@@ -96,9 +96,9 @@
                 <PasswordField id="passwordField1" fx:id="password" layoutX="10.0" layoutY="162.0" prefHeight="33.0" prefWidth="696.0" promptText="Password" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="0.0" />
               </children>
             </AnchorPane>
-                <Button id="button1" fx:id="login" defaultButton="true" onAction="#processLogin" prefHeight="70.0" prefWidth="272.0" style="-fx-border-width: 4;" stylesheets="@css/button.css">
+                <Button id="button1" fx:id="login" defaultButton="true" onAction="#processLogin" prefHeight="70.0" prefWidth="356.0" style="-fx-border-width: 4;" stylesheets="@css/button.css">
                      <graphic>
-                        <Text fill="WHITE" stroke="#000000fc" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeType="OUTSIDE" strokeWidth="2.0" text="Login" textAlignment="CENTER" wrappingWidth="148.13671875">
+                        <Text fx:id="loggy" fill="WHITE" stroke="#000000fc" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeType="OUTSIDE" strokeWidth="2.0" text="Login" textAlignment="CENTER" wrappingWidth="148.13671875">
                            <font>
                               <Font name="System Bold" size="27.0" />
                            </font>
@@ -107,6 +107,24 @@
                   </Button>
           </children>
         </VBox>
+            <Button id="button1" fx:id="ar" defaultButton="true" layoutX="-153.0" layoutY="-38.0" onAction="#arButton" prefHeight="27.0" prefWidth="116.0" style="-fx-border-width: 4;" stylesheets="@css/button.css">
+               <graphic>
+                  <Text fill="WHITE" stroke="#000000fc" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeType="OUTSIDE" strokeWidth="2.0" text="AR" textAlignment="CENTER" wrappingWidth="148.13671875">
+                     <font>
+                        <Font name="System Bold" size="27.0" />
+                     </font>
+                  </Text>
+               </graphic>
+            </Button>
+            <Button id="button1" fx:id="en" defaultButton="true" layoutX="35.0" layoutY="-38.0" onAction="#enButton" prefHeight="27.0" prefWidth="116.0" style="-fx-border-width: 4;" stylesheets="@css/button.css">
+               <graphic>
+                  <Text fill="WHITE" stroke="#000000fc" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeType="OUTSIDE" strokeWidth="2.0" text="EN" textAlignment="CENTER" wrappingWidth="148.13671875">
+                     <font>
+                        <Font name="System Bold" size="27.0" />
+                     </font>
+                  </Text>
+               </graphic>
+            </Button>
       </children>
     </AnchorPane>
       <Text fx:id="errorMessage" fill="#ff3838" layoutX="348.0" layoutY="699.0" stroke="WHITE" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeType="OUTSIDE" strokeWidth="3.4" textAlignment="CENTER" wrappingWidth="409.13671875">
