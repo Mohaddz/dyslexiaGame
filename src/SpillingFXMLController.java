@@ -75,14 +75,13 @@ public class SpillingFXMLController implements Initializable {
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-
+        countPoints = 0;
+        countMisses = 0;
         Level.add(new rhymeWords("first", new Image("C:\\Users\\moham\\Documents\\NetBeansProjectsb\\dyslexiaGame\\src\\img\\First.png", 330, 353, true, true), new Media(new File("src\\audio\\first.mp3").toURI().toString())));
         Level.add(new rhymeWords("space", new Image("C:\\Users\\moham\\Documents\\NetBeansProjectsb\\dyslexiaGame\\src\\img\\space.jpg", 330, 353, true, true), new Media(new File("src\\audio\\space.mp3").toURI().toString())));
         Level.add(new rhymeWords("people", new Image("C:\\Users\\moham\\Documents\\NetBeansProjectsb\\dyslexiaGame\\src\\img\\people.png", 330, 353, true, true), new Media(new File("src\\audio\\people.mp3").toURI().toString())));
         Level.add(new rhymeWords("date", new Image("C:\\Users\\moham\\Documents\\NetBeansProjectsb\\dyslexiaGame\\src\\img\\date.png", 330, 353, true, true), new Media(new File("src\\audio\\date.mp3").toURI().toString())));
         Level.add(new rhymeWords("fact", new Image("C:\\Users\\moham\\Documents\\NetBeansProjectsb\\dyslexiaGame\\src\\img\\fact.png", 330, 353, true, true), new Media(new File("src\\audio\\fact.mp3").toURI().toString())));
-        mainMenuController.bgMusicMP3.play();
-        mainMenuController.bgMusicMP3.setCycleCount(MediaPlayer.INDEFINITE);
         hardButton.setStyle("-fx-background-color: orange;");
         hardButton.setStyle("-fx-border-color: black;");
         

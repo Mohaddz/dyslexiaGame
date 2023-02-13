@@ -117,6 +117,8 @@ public class DyslexiaFXMLController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        countPoints = 0;
+        countMisses = 0;
         randomWord = new Random().nextInt(2);
         randomImage = new Random().nextInt(2);
         chosenWord = pairs[level][randomWord];
@@ -138,8 +140,6 @@ public class DyslexiaFXMLController implements Initializable {
         chosenWordMP3 = new MediaPlayer(chosenWord.getAudio());
         correctMP3 = new MediaPlayer(correctAudio);
         wrongMP3 = new MediaPlayer(wrongAudio);
-        mainMenuController.bgMusicMP3.play();
-        mainMenuController.bgMusicMP3.setCycleCount(MediaPlayer.INDEFINITE);
         hardButton.setStyle("-fx-background-color: orange;");
         hardButton.setStyle("-fx-border-color: black;");
     }

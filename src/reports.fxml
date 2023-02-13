@@ -32,25 +32,46 @@
   OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 -->
 
-<?import java.net.URL?>
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.control.MenuItem?>
-<?import javafx.scene.control.TableColumn?>
-<?import javafx.scene.control.TableView?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane id="AnchorPane" focusTraversable="false" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="794.0" prefWidth="1104.0" styleClass="background" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="login.LoginController">
+<AnchorPane id="AnchorPane" fx:id="reportPane" focusTraversable="false" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="794.0" prefWidth="1104.0" styleClass="background" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="reportsController">
   <children>
       <ImageView fitHeight="770.0" fitWidth="1104.0" layoutY="24.0">
          <image>
             <Image url="@img\BG.png" />
          </image>
       </ImageView>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" height="258.0" layoutX="73.0" layoutY="384.0" stroke="#fffffffc" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeWidth="0.0" style="-fx-arc-height: 50; -fx-arc-width: 50;" width="423.0">
+         <fill>
+            <LinearGradient endX="1.0" endY="1.0" startX="1.0" startY="0.5023696682464455">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="1.0" green="0.8399691581726074" blue="0.43518519401550293" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="1.0" green="0.6913580298423767" blue="0.07407407462596893" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </fill>
+      </Rectangle>
       <MenuBar layoutY="-1.0" prefHeight="27.0" prefWidth="1104.0" style="-fx-background-color: skyblue;">
          <menus>
             <Menu mnemonicParsing="false" text="File">
@@ -70,22 +91,116 @@
             </Menu>
          </menus>
       </MenuBar>
-      <Text fill="WHITE" layoutX="335.0" layoutY="188.0" stroke="#000000fc" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeType="OUTSIDE" strokeWidth="3.0" text="Reports" textAlignment="CENTER" wrappingWidth="435.13671875">
+      <Text fill="WHITE" layoutX="330.0" layoutY="108.0" stroke="#000000fc" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeType="OUTSIDE" strokeWidth="3.0" text="Report" textAlignment="CENTER" wrappingWidth="435.13671875">
          <font>
             <Font name="System Bold" size="61.0" />
          </font>
       </Text>
-      <TableView fx:id="Table" layoutX="323.0" layoutY="272.0" prefHeight="318.0" prefWidth="459.0">
-        <columns>
-          <TableColumn fx:id="username" prefWidth="98.0" text="Username" />
-          <TableColumn fx:id="gamename" prefWidth="106.0" text="Game Name" />
-            <TableColumn fx:id="points" prefWidth="59.0" text="Points" />
-            <TableColumn fx:id="misses" prefWidth="59.0" text="Misses" />
-            <TableColumn fx:id="date" prefWidth="136.0" text="Date" />
-        </columns>
-      </TableView>
+      <Text fx:id="usernameMessage" fill="WHITE" layoutX="180.0" layoutY="200.0" stroke="#000000fc" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeType="OUTSIDE" strokeWidth="3.0" text="High scores for USERNAME" textAlignment="CENTER" wrappingWidth="737.13671875">
+         <font>
+            <Font name="System Bold" size="46.0" />
+         </font>
+      </Text>
+      <Line endX="6.0" endY="56.0" layoutX="541.0" layoutY="582.0" startX="6.0" startY="-300.0" strokeWidth="3.0" />
+      <Text fill="WHITE" layoutX="445.0" layoutY="331.0" stroke="#000000fc" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeType="OUTSIDE" strokeWidth="3.0" text="Spelling Game" textAlignment="CENTER" wrappingWidth="737.13671875">
+         <font>
+            <Font name="System Bold" size="38.0" />
+         </font>
+      </Text>
+      <Text fill="WHITE" layoutX="-85.0" layoutY="331.0" stroke="#000000fc" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeType="OUTSIDE" strokeWidth="3.0" text="Words Game" textAlignment="CENTER" wrappingWidth="737.13671875">
+         <font>
+            <Font name="System Bold" size="38.0" />
+         </font>
+      </Text>
+      <Text fill="WHITE" layoutX="-189.0" layoutY="453.0" stroke="#000000fc" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeType="OUTSIDE" strokeWidth="2.0" text="Points:" textAlignment="CENTER" wrappingWidth="737.13671875">
+         <font>
+            <Font name="System Bold" size="35.0" />
+         </font>
+      </Text>
+      <Text fill="WHITE" layoutX="-189.0" layoutY="525.0" stroke="#000000fc" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeType="OUTSIDE" strokeWidth="2.0" text="Misses:" textAlignment="CENTER" wrappingWidth="737.13671875">
+         <font>
+            <Font name="System Bold" size="35.0" />
+         </font>
+      </Text>
+      <Text fill="WHITE" layoutX="-205.0" layoutY="596.0" stroke="#000000fc" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeType="OUTSIDE" strokeWidth="2.0" text="Date:" textAlignment="CENTER" wrappingWidth="737.13671875">
+         <font>
+            <Font name="System Bold" size="35.0" />
+         </font>
+      </Text>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" height="258.0" layoutX="602.0" layoutY="382.0" stroke="#fffffffc" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeWidth="0.0" style="-fx-arc-height: 50; -fx-arc-width: 50;" width="423.0">
+         <fill>
+            <LinearGradient endX="1.0" endY="1.0" startX="1.0" startY="0.5023696682464455">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="1.0" green="0.8399691581726074" blue="0.43518519401550293" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="1.0" green="0.6913580298423767" blue="0.07407407462596893" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </fill>
+      </Rectangle>
+      <Text fill="WHITE" layoutX="330.0" layoutY="453.0" stroke="#000000fc" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeType="OUTSIDE" strokeWidth="2.0" text="Points:" textAlignment="CENTER" wrappingWidth="737.13671875">
+         <font>
+            <Font name="System Bold" size="35.0" />
+         </font>
+      </Text>
+      <Text fill="WHITE" layoutX="330.0" layoutY="525.0" stroke="#000000fc" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeType="OUTSIDE" strokeWidth="2.0" text="Misses:" textAlignment="CENTER" wrappingWidth="737.13671875">
+         <font>
+            <Font name="System Bold" size="35.0" />
+         </font>
+      </Text>
+      <Text fill="WHITE" layoutX="313.0" layoutY="596.0" stroke="#000000fc" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeType="OUTSIDE" strokeWidth="2.0" text="Date:" textAlignment="CENTER" wrappingWidth="737.13671875">
+         <font>
+            <Font name="System Bold" size="35.0" />
+         </font>
+      </Text>
+      <Text fx:id="pointSG" fill="WHITE" layoutX="743.0" layoutY="455.0" stroke="#000000fc" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeType="OUTSIDE" strokeWidth="2.0" text="0" textAlignment="CENTER" wrappingWidth="60.13671875">
+         <font>
+            <Font name="System Bold" size="35.0" />
+         </font>
+      </Text>
+      <Text fx:id="pointsWG" fill="WHITE" layoutX="224.0" layoutY="455.0" stroke="#000000fc" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeType="OUTSIDE" strokeWidth="2.0" text="0" textAlignment="CENTER" wrappingWidth="60.13671875">
+         <font>
+            <Font name="System Bold" size="35.0" />
+         </font>
+      </Text>
+      <Text fx:id="missesWG" fill="WHITE" layoutX="224.0" layoutY="525.0" stroke="#000000fc" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeType="OUTSIDE" strokeWidth="2.0" text="0" textAlignment="CENTER" wrappingWidth="60.13671875">
+         <font>
+            <Font name="System Bold" size="35.0" />
+         </font>
+      </Text>
+      <Text fx:id="missesSG" fill="WHITE" layoutX="743.0" layoutY="525.0" stroke="#000000fc" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeType="OUTSIDE" strokeWidth="2.0" text="0" textAlignment="CENTER" wrappingWidth="60.13671875">
+         <font>
+            <Font name="System Bold" size="35.0" />
+         </font>
+      </Text>
+      <Text fx:id="dateWG" fill="WHITE" layoutX="215.0" layoutY="594.0" stroke="#000000fc" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeType="OUTSIDE" strokeWidth="2.0" text="Null" wrappingWidth="259.13671875">
+         <font>
+            <Font name="System Bold" size="35.0" />
+         </font>
+      </Text>
+      <Text fx:id="dateSG" fill="WHITE" layoutX="734.0" layoutY="594.0" stroke="#000000fc" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeType="OUTSIDE" strokeWidth="2.0" text="Null" wrappingWidth="259.13671875">
+         <font>
+            <Font name="System Bold" size="35.0" />
+         </font>
+      </Text>
+      <Button fx:id="exitGame" contentDisplay="CENTER" layoutX="425.0" layoutY="674.0" mnemonicParsing="false" onAction="#exitClicked" prefHeight="77.0" prefWidth="241.0" style="-fx-border-width: 3;" stylesheets="@css/button.css" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="27.0" />
+         </font>
+         <graphic>
+            <Text fill="WHITE" stroke="#000000fc" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeType="OUTSIDE" strokeWidth="2.0" text="Return" textAlignment="CENTER" wrappingWidth="148.13671875">
+               <font>
+                  <Font name="System Bold" size="38.0" />
+               </font>
+            </Text>
+         </graphic>
+      </Button>
   </children>
-  <stylesheets>
-    <URL value="@../NetBeansProjects/HelloFX/src/Login.css" />
-  </stylesheets>
 </AnchorPane>

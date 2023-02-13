@@ -56,15 +56,13 @@ public class mainMenuController implements Initializable {
     private void spellingGameClicked(ActionEvent event) throws IOException {
         AnchorPane spellingGame = FXMLLoader.load(getClass().getResource("SpillingFXML.fxml"));
         gameChoice=0;
-        
         mainMenuPane.getChildren().setAll(spellingGame);
 
     }
 
     @FXML
     private void reportsClicked(ActionEvent event) throws IOException {
-        AnchorPane reports = FXMLLoader.load(getClass().getResource("mainMenu.fxml"));
-        bgMusicMP3.stop();
+        AnchorPane reports = FXMLLoader.load(getClass().getResource("reports.fxml"));
         mainMenuPane.getChildren().setAll(reports);
     }
 

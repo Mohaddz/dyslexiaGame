@@ -71,13 +71,14 @@ public class LoginController implements Initializable {
     private void processLogin(ActionEvent event) throws IOException {
         
         AnchorPane mainMenu = FXMLLoader.load(getClass().getResource("mainMenu.fxml"));
-        url1 = "jdbc:derby://localhost:1527/sample";
+        url1 = "jdbc:derby://localhost:1527/cpcs";
         userName = userId.getText();
         userPassword = password.getText();
         String query = "SELECT name,passwod FROM player";
         boolean found = false;
         if(userName.isEmpty()||userPassword.isEmpty()){
             errorMessage.setText("Wrong entry");
+            mainMenuController.bgMusicMP3.stop();
             return;
         }
         
