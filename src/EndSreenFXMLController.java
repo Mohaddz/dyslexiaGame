@@ -45,8 +45,8 @@ public class EndSreenFXMLController implements Initializable {
             try ( Connection con = DriverManager.getConnection(url1, "cpcs", "cpcs");  Statement stmt = con.createStatement();  ResultSet rs = stmt.executeQuery(query)) {
                 while (rs.next()) {
                     if (rs.getInt("SP_POINTS") - rs.getInt("SP_MISSES") <= SpillingFXMLController.countPoints - SpillingFXMLController.countMisses) {
-                        LocalDateTime now = LocalDateTime.now();  
-                        query = "UPDATE player SET SP_POINTS=" + SpillingFXMLController.countPoints + ",SP_MISSES=" + SpillingFXMLController.countMisses + ",SP_DATE="+dtf.format(now)+" WHERE name='" + LoginController.userName + "'";
+                        LocalDateTime now = LocalDateTime.now();                       
+                        query = "UPDATE player SET SP_POINTS=" + SpillingFXMLController.countPoints + ",SP_MISSES=" + SpillingFXMLController.countMisses + ",SP_DATE='"+dtf.format(now)+"' WHERE name='" + LoginController.userName + "'";
                         stmt.executeUpdate(query);
                     }
 
@@ -63,7 +63,7 @@ public class EndSreenFXMLController implements Initializable {
                     if (rs.getInt("W_POINTS") - rs.getInt("W_MISSES") <= DyslexiaFXMLController.countPoints - DyslexiaFXMLController.countMisses) {
                         LocalDateTime now = LocalDateTime.now();  
                         System.out.println(dtf.format(now));
-                        query = "UPDATE player SET W_POINTS=" + DyslexiaFXMLController.countPoints  + ",W_MISSES=" + DyslexiaFXMLController.countMisses + ",W_DATE="+dtf.format(now)+" WHERE name='" + LoginController.userName + "'";
+                        query = "UPDATE player SET W_POINTS=" + DyslexiaFXMLController.countPoints  + ",W_MISSES=" + DyslexiaFXMLController.countMisses + ",W_DATE='"+dtf.format(now)+"' WHERE name='" + LoginController.userName + "'";
                         stmt.executeUpdate(query);
                     }
 

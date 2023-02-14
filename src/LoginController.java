@@ -104,7 +104,7 @@ public class LoginController implements Initializable {
             
             if (found == false) {
                 System.out.println("not found");
-                query = "INSERT INTO player VALUES('" + userName + "', '" + userPassword + "', 0,0,null,0,0,null)";
+                query = "INSERT INTO player VALUES('" + userName + "', '" + userPassword + "',0,0,0,0,'Null','Null')";
                 stmt.executeUpdate(query);
                 loginPane.getChildren().setAll(mainMenu);
             }
