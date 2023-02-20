@@ -1,8 +1,8 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+Mohammed Majbour AL-Namri 2036222
+Bander Alamoudi 1937276
+Mohammed AL-Shebl
+*/
 
 import java.io.IOException;
 import javafx.application.Application;
