@@ -1,2 +1,2 @@
 # dyslexiaGame
-Game for dyslexia people
+Game for dyslexia people.
