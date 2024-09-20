@@ -1,0 +1,25 @@
+# This CITATION.cff file was generated with cffinit.
+# Visit https://bit.ly/cffinit to generate yours today!
+
+cff-version: 1.2.0
+title: DyslexiaFarm
+message: >-
+  If you use this software, please cite it using the
+  metadata from this file.
+type: software
+authors:
+  - given-names: Mohammed
+    family-names: Alshebl
+    affiliation: King Abdulaziz University
+  - given-names: Mohammed
+    family-names: AL-Namri
+    email: Mohammed_alnamri@hotmail.com
+    affiliation: King Abdulaziz University
+repository-code: 'https://github.com/Mohaddz/dyslexiaGame'
+abstract: >-
+  Dyslexia Farm is a game that helps children who has
+  spelling disabilities such as Dyslexia, to overcome this
+  problem by practicing a lot of examples attractively.
+keywords:
+  - Dyslexia
+license: MIT
