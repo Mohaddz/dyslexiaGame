@@ -63,3 +63,15 @@ In the report page, it retreives the data from the database by using the user na
 
 
 The Database table that is being used in the project. All entities are self-explanatory, SP_MISSES and SP_POINTS are for storing the points for the first game, W_MISSES and W_POINTS are for words game, also dates are for the date that the high score record has been broken. 
+
+Citation
+```
+@software{Alshebl_DyslexiaFarm_2023,
+author = {Alshebl, Mohammed and AL-Namri, Mohammed},
+license = {MIT},
+month = feb,
+title = {{DyslexiaFarm}},
+url = {https://github.com/Mohaddz/dyslexiaGame},
+year = {2023}
+}
+```
